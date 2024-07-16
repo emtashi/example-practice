@@ -12,7 +12,7 @@
 
 module load hb hb-gnu fastqc-0.11.7
 
-mkdir -p my_directory /hb/groups/kelley_training/rawdata/SST905_1_USR18001328L_HCCVGDMXX_L2_2.fq.gz
+mkdir -p my_directory /hb/groups/kelley_training/Emma/fastqc_results
 fastqc -t 2 -o fastqc_out /hb/groups/kelley_training/rawdata/SST905_1_USR18001328L_HCCVGDMXX_L2_2.fq.gz
 touch fastqc_run1.done
 

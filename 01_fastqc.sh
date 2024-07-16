@@ -1,4 +1,3 @@
->nano 01_fastgc.sh
 #!/bin/bash
 #SBATCH --job-name=fastqc_test # Name the job fastqc_test to the queue 
 #SBATCH --time= 0-01:00:00 # Wall clock time limit in Days-Hours:min:seconds
@@ -13,7 +12,8 @@
 
 module load hb hb-gnu fastqc-0.11.7
 
-mkdir fastqc_out 
+mkdir -p my_directory /hb/groups/kelley_training/rawdata/SST905_1_USR18001328L_HCCVGDMXX_L2_2.fq.gz
 fastqc -t 2 -o fastqc_out /hb/groups/kelley_training/rawdata/SST905_1_USR18001328L_HCCVGDMXX_L2_2.fq.gz
+touch fastqc_run1.done
 
 # To submit use >sbath 01_fastqc.sh

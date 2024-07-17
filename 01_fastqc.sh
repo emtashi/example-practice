@@ -16,4 +16,4 @@ mkdir -p /hb/groups/kelley_training/Emma/fastqc_results
 fastqc -t 2 -o fastqc_out /hb/groups/kelley_training/rawdata/SST905_1_USR18001328L_HCCVGDMXX_L2_2.fq.gz
 touch fastqc_run1.done
 
-# To submit use >sbath 01_fastqc.sh
+# To submit use sbath 01_fastqc.sh

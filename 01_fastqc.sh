@@ -1,19 +1,19 @@
 #!/bin/bash
 #SBATCH --job-name=fastqc_test # Name the job fastqc_test to the queue 
-#SBATCH --time= 0-01:00:00 # Wall clock time limit in Days-Hours:min:seconds
+#SBATCH --time=0-01:00:00 # Wall clock time limit in Days-Hours:min:seconds
 #SBATCH --mail-user=etashi@ucsc.edu # send updates to my email
 #SBATCH --mail-type=ALL # send all types of updates
 #SBATCH --output=fastqc.out # output file
-#SBATCH --error=fastqc.out # error file
+#SBATCH --error=fastqc.err # error file
 #SBATCH --ntasks=1 # Run 1 job
 #SBATCH --ntasks-per-node=1 # one task per computer
 #SBATCH --cpus-per-task=2 # 2 CPUS per job
 #SBATCH --mem=4GB # memory limit of 4 GB
 
-module load hb hb-gnu fastqc-0.11.7
+module load fastqc/0.12.1
 
 mkdir -p /hb/groups/kelley_training/Emma/fastqc_results
-fastqc -t 2 -o fastqc_out /hb/groups/kelley_training/rawdata/SST905_1_USR18001328L_HCCVGDMXX_L2_2.fq.gz
+fastqc -t 2 -o /hb/groups/kelley_training/Emma/fastqc_results /hb/groups/kelley_training/rawdata/SST905_1_USR18001328L_HCCVGDMXX_L2_2.fq.gz
 touch fastqc_run1.done
 
 # To submit use sbath 01_fastqc.sh

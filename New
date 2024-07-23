@@ -1,1 +1,27 @@
+#!/bin/bash
+#SBATCH --job-name=fastqc
+#SBATCH --time=0-12:00:00 # wall clock time limit in days-hours:min:seconds
+#SBATCH --partition=128x24
+#SBATCH --output=QC.out # output file
+#SBATCH --error=QC.err # error file
+#SBATCH --ntasks=1 # run 1 job
+#SBATCH --cpus-per-task=2 # 2 CPUs per job
+#SBATCH --mem=4GB # memory limit of 4GB
 
+#This line loads modules
+module load fastqc/0.12.1
+
+#Use cat to rad through sample list line by line in a loop
+#assign whatever is in that line to the variable 'sample'
+#execute the bit between DO and DONE in loop
+
+#Sample name variable can be ${sample}
+#one after another for each sample ID (stored as ${sample})
+
+cat my_sample_list.txt | while read sample
+do
+fastqc -t 1 -o /hb/home/etashi/fastqc_reports/ /hb/groups/kelley_training/${sample}_R1_001_part1.fastq.gz
+fastqc -t 1 -o /hb/home/etashi/fastqc_reports/ /hb/groups/kelley_training/${sample}_R2_001_part1.fastq.gz
+
+#Have 'touch' statement meaning loop has finished and the script has run through to the end
+touch all_samples.done

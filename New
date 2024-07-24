@@ -20,8 +20,8 @@ module load fastqc/0.12.1
 
 cat my_sample_list.txt | while read sample
 do
-fastqc -t 1 -o /hb/home/etashi/fastqc_reports/ /hb/groups/kelley_training/${sample}_R1_001_part1.fastq.gz
-fastqc -t 1 -o /hb/home/etashi/fastqc_reports/ /hb/groups/kelley_training/${sample}_R2_001_part1.fastq.gz
+fastqc -t 1 -o /hb/home/etashi/fastqc_reports/ /hb/groups/kelley_training/Emma/${sample}_R1_001_part1.fastq.gz
+fastqc -t 1 -o /hb/home/etashi/fastqc_reports/ /hb/groups/kelley_training/Emma/${sample}_R2_001_part1.fastq.gz
 
 #Have 'touch' statement meaning loop has finished and the script has run through to the end
 touch all_samples.done

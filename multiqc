@@ -1,1 +1,16 @@
+#!/bin/bash
+#SBATCH --job-name=multiqc
+#SBATCH --time=0-12:00:00 # wall clock time limit in days-hours:min:seconds
+#SBATCH --partition=128x24
+#SBATCH --output=mqc.out # output file
+#SBATCH --error=mqc.err # error file
+#SBATCH --ntasks=1 # run 1 job
+#SBATCH --cpus-per-task=2 # 2 CPUs per job
+#SBATCH --mem=2GB # memory limit of 2GB
 
+#This line loads module 
+module load multiqc/0.12.1
+
+
+#Touch statement meaning everything has run and complete
+touch multiqc.done

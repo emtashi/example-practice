@@ -8,9 +8,8 @@
 #SBATCH --cpus-per-task=2 # 2 CPUs per job
 #SBATCH --mem=2GB # memory limit of 2GB
 
-#This line loads module 
-module load miniconda3.9/0.12.1
-
+cd /hb/groups/kelley_training/Emma/fastqc_reports/
+multiqc .
 
 #Touch statement meaning everything has run and complete
 touch multiqc.done

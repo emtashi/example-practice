@@ -9,7 +9,7 @@
 #SBATCH --mem=2GB # memory limit of 2GB
 
 #This line loads module 
-module load multiqc/0.12.1
+module load miniconda3.9/0.12.1
 
 
 #Touch statement meaning everything has run and complete
